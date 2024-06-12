@@ -223,7 +223,7 @@ abstract class Container implements Datastore_Holder_Interface {
 	 * @return Container
 	 */
 	public static function make() {
-		return call_user_func_array( array( get_class(), 'factory' ), func_get_args() );
+		return call_user_func_array( array( static::class(), 'factory' ), func_get_args() );
 	}
 
 	/**
@@ -270,7 +270,7 @@ abstract class Container implements Datastore_Holder_Interface {
 	 */
 	protected function get_condition_types( $static ) {
 		$group = $static ? 'static' : 'dynamic';
-		$container_type = Helper::class_to_type( get_class( $this ), '_Container' );
+		$container_type = Helper::class_to_type( static::class( $this ), '_Container' );
 
 		$condition_types = array();
 		$condition_types = apply_filters( 'carbon_fields_' . $container_type . '_container_' . $group . '_condition_types', $condition_types, $container_type, $this );

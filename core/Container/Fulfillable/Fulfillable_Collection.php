@@ -276,7 +276,7 @@ class Fulfillable_Collection implements Fulfillable {
 				}
 				$collection->add_fulfillable( $filtered_collection, $fulfillable_comparison );
 			} else {
-				$type = $this->condition_factory->get_type( get_class( $fulfillable ) );
+				$type = $this->condition_factory->get_type( static::class( $fulfillable ) );
 				if ( ! in_array( $type, $condition_whitelist ) ) {
 					continue;
 				}
@@ -312,7 +312,7 @@ class Fulfillable_Collection implements Fulfillable {
 				$evaluated_collection = $fulfillable->evaluate( $condition_types, $environment, $comparison_operators, $condition_types_blacklist, $comparison_operators_blacklist );
 				$collection->add_fulfillable( $evaluated_collection, $fulfillable_comparison );
 			} else {
-				$type = $this->condition_factory->get_type( get_class( $fulfillable ) );
+				$type = $this->condition_factory->get_type( static::class( $fulfillable ) );
 				$comparison_operator = $fulfillable->get_comparison_operator();
 
 				$condition_type_match = in_array( $type, $condition_types );

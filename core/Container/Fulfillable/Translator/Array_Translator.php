@@ -30,7 +30,7 @@ class Array_Translator extends Translator {
 	 */
 	protected function condition_to_foreign( Condition $condition ) {
 		return array(
-			'type' => $this->condition_factory->get_type( get_class( $condition ) ),
+			'type' => $this->condition_factory->get_type( static::class( $condition ) ),
 			'compare' => $condition->get_comparison_operator(),
 			'value' => $condition->get_value(),
 		);

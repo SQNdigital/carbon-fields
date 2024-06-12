@@ -212,7 +212,7 @@ class FulfillableCollectionTest extends WP_UnitTestCase {
 		$received = array();
 		foreach ( $ef as $tuple ) {
 			$received[] = array(
-				'type' => $this->condition_factory->get_type( get_class( $tuple['fulfillable'] ) ),
+				'type' => $this->condition_factory->get_type( static::class( $tuple['fulfillable'] ) ),
 				'value' => $tuple['fulfillable']->get_value(),
 			);
 		}
@@ -242,7 +242,7 @@ class FulfillableCollectionTest extends WP_UnitTestCase {
 		$received = array();
 		foreach ( $ef as $tuple ) {
 			$received[] = array(
-				'type' => $this->condition_factory->get_type( get_class( $tuple['fulfillable'] ) ),
+				'type' => $this->condition_factory->get_type( static::class( $tuple['fulfillable'] ) ),
 				'value' => $tuple['fulfillable']->get_value(),
 			);
 		}
@@ -274,7 +274,7 @@ class FulfillableCollectionTest extends WP_UnitTestCase {
 		$received = array();
 		foreach ( $ef as $tuple ) {
 			$received[] = array(
-				'type' => $this->condition_factory->get_type( get_class( $tuple['fulfillable'] ) ),
+				'type' => $this->condition_factory->get_type( static::class( $tuple['fulfillable'] ) ),
 				'comparison_operator' => $tuple['fulfillable']->get_comparison_operator(),
 				'value' => $tuple['fulfillable']->get_value(),
 			);

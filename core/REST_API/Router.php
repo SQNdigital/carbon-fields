@@ -258,7 +258,7 @@ class Router {
 					"Carbon_Fields\Field\Image_Field"
 				];
 
-				if ( in_array( get_class( $field ), $attachments_class ) ) {
+				if ( in_array( static::class( $field ), $attachments_class ) ) {
 					$value = Helper::get_attachments_urls($value);
 				}
 			}
