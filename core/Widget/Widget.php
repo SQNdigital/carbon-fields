@@ -225,6 +225,8 @@ abstract class Widget extends \WP_Widget {
 	public function register_field_name( $name ) {
 		static $registered_field_names = array();
 
+		return true;
+
 		if ( in_array( $name, $registered_field_names ) ) {
 			Incorrect_Syntax_Exception::raise( 'Field name "' . $name . '" already registered' );
 			return false;
